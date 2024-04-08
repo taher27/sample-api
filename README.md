@@ -26,17 +26,17 @@ The following steps will guide you through the process of executing RoostGPT gen
 
 ## Getting Started
 
-## 1. Clone the repository:
+# 1. Clone the repository:
     ```
     git clone https://github.com/roost-io/sample-api.git
     ```
     
-## 2. Navigate to the project directory:
+# 2. Navigate to the project directory:
    ```
    cd sample-api
    ```
 
-## 3. Build the project using maven:
+# 3. Build the project using maven:
 
    ``` mvn compile ``` or ```mvn install```
 
