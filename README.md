@@ -36,7 +36,7 @@ The following steps will guide you through the process of executing RoostGPT gen
    cd sample-api
    ```
 
-#### 3. Build the project using maven:
+### 3. Build the project using maven:
 
    ``` mvn compile ``` or ```mvn install```
 
