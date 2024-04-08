@@ -9,13 +9,13 @@ Sample-api demonstrates the significance of generating API tests based on API sp
 ## Development Process 
 The development process of the Sample-api integrates cutting-edge AI-powered tools, notably RoostGPT, alongside established practices:
 
-1. Implementation:
+###1. Implementation:
 The repository is implemented with sample APIs along with its specification files. 
 
-2. Test Generation with RoostGPT:
+###2. Test Generation with RoostGPT:
 RoostGPT is utilized to generate API tests based on API specification files. This innovative approach enhances test coverage and efficiency in the development process.
 
-3. Test Execution:
+###3. Test Execution:
 Maven is used as the build automation tool to compile the code and execute AI-generated unit tests. This ensures thorough validation of the application's functionality.
 
 The following steps will guide you through the process of executing RoostGPT generated tests, to verify the functionality and behavior of the tool.
