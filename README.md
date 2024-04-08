@@ -13,7 +13,9 @@ The following steps will guide you through the process of executing RoostGPT gen
 
 2. Clone the repository:
    
-    ```git clone https://github.com/roost-io/sample-api.git```
+    ```
+    git clone https://github.com/roost-io/sample-api.git
+    ```
 
 4. Build the project using maven:
 
