@@ -5,11 +5,6 @@ This github repository serves as a sample project designed to illustrate the pro
 ## Overview 
 Sample-api demonstrates the significance of generating API tests based on API specification files. With RoostGPT, you can quickly create comprehensive and accurate tests for your APIs, reducing the manual effort required for testing.
 
-The following steps will guide you through the process of executing RoostGPT generated tests, to verify the functionality and behavior of the tool.
-
-## Prerequisites
-1. Java Development Kit (JDK) installed on your system.
-2. Maven installed on your system.
 
 ## Development Process 
 The development process of the Sample-api integrates cutting-edge AI-powered tools, notably RoostGPT, alongside established practices:
@@ -22,6 +17,12 @@ RoostGPT is utilized to generate API tests based on API specification files. Thi
 
 Test Execution:
 Maven is used as the build automation tool to compile the code and execute AI-generated unit tests. This ensures thorough validation of the application's functionality.
+
+The following steps will guide you through the process of executing RoostGPT generated tests, to verify the functionality and behavior of the tool.
+
+## Prerequisites
+1. Java Development Kit (JDK) installed on your system.
+2. Maven installed on your system.
 
 ## Getting Started
 
