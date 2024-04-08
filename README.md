@@ -29,13 +29,13 @@ Maven will execute the tests, and display the test results in the terminal.
 
 5. (Optional) Run Specific Tests: If you want to run specific test classes or methods, you can use Maven's Surefire plugin to filter tests. Use the following command format:
 
-To run specific test class:
+- To run specific test class:
 ```
 mvn -Dtest=TestClassName test
 ```
 Replace TestClassName with the name of the class containing the tests you want to run.
 
-To run specific test method within a class:
+- To run specific test method within a class:
 ```
 mvn -Dtest=TestClassName#testMethodName test
 ```
