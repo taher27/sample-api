@@ -1,6 +1,7 @@
 ## RoostGPT generated Maven Tests
 
 This github repository serves as a sample project designed to illustrate the process of using RoostGPT (an AI-powered tool) which streamlines the mechanism of creating test cases, enabling developers to improve code quality and accelerate development workflows.
+
 The following steps will guide you through the process of executing RoostGPT generated Maven tests, to verify the functionality and behavior of the tool.
 
 ## Prerequisites
@@ -44,5 +45,5 @@ Replace testMethodName with the name of the test method you want to run.
 6. Review Test Results: After running the tests, review the output in the terminal. Maven will display information about the tests executed, including any failures or errors encountered.
 
 ## Feedback and Support
-For feedback, questions, or support related to the sample-api repository or RoostGPT integration, please contact our team at _.
+For more information about RoostGPT or our other products and services, please visit our website at roost.ai or contact us at support@roost.ai.
 
