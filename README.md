@@ -1,6 +1,6 @@
 # Sample-api
 
-This github repository serves as a sample project designed to illustrate the process of using #### RoostGPT (an AI-powered tool) #### which streamlines the mechanism of creating test cases, enabling developers to improve code quality and accelerate development workflows.
+This github repository serves as a sample project designed to illustrate the process of using **RoostGPT (an AI-powered tool)** which streamlines the mechanism of creating test cases, enabling developers to improve code quality and accelerate development workflows.
 
 ## Overview 
 Sample-api demonstrates the significance of generating API tests based on API specification files. With RoostGPT, you can quickly create comprehensive and accurate tests for your APIs, reducing the manual effort required for testing.
