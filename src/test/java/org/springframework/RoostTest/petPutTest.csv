@@ -1,0 +1,11 @@
+id^|^category^|^name^|^photoUrls^|^tags^|^status^|^statusCode
+1^|^{ "id": 1, "name": "Dogs"}^|^Fluffy^|^["url1", "url2"]^|^["tag1", "tag2"]^|^available^|^200
+2^|^{ "id": 2, "name": "Cats"}^|^Whiskers^|^["url3", "url4"]^|^["tag3", "tag4"]^|^pending^|^400
+3^|^{ "id": 3, "name": "Birds"}^|^Chirp^|^["url5", "url6"]^|^["tag5", "tag6"]^|^sold^|^404
+4^|^{ "id": 4, "name": "Fish"}^|^Bubbles^|^["url7", "url8"]^|^["tag7", "tag8"]^|^available^|^405
+5^|^{ "id": 5, "name": "Hamsters"}^|^Squeaky^|^["url9", "url10"]^|^["tag9", "tag10"]^|^pending^|^200
+6^|^{ "id": 6, "name": "Rabbits"}^|^Hoppy^|^["url11", "url12"]^|^["tag11", "tag12"]^|^sold^|^400
+7^|^{ "id": 7, "name": "Turtles"}^|^Shellie^|^["url13", "url14"]^|^["tag13", "tag14"]^|^available^|^404
+8^|^{ "id": 8, "name": "Snakes"}^|^Hissy^|^["url15", "url16"]^|^["tag15", "tag16"]^|^pending^|^405
+9^|^{ "id": 9, "name": "Frogs"}^|^Jumpy^|^["url17", "url18"]^|^["tag17", "tag18"]^|^sold^|^200
+10^|^{ "id": 10, "name": "Lizards"}^|^Scaly^|^["url19", "url20"]^|^["tag19", "tag20"]^|^available^|^400

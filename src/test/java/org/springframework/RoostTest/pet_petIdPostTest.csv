@@ -1,0 +1,11 @@
+petId^|^name^|^status^|^statusCode
+123456^|^Bella^|^Available^|^200
+789012^|^Charlie^|^Reserved^|^201
+345678^|^Max^|^Adopted^|^200
+901234^|^Buddy^|^Available^|^200
+567890^|^Jack^|^Adopted^|^200
+345121^|^Sadie^|^Reserved^|^201
+456786^|^Daisy^|^Available^|^200
+123235^|^Roxie^|^Adoption Pending^|^202
+567134^|^Leo^|^Adoption Pending^|^202
+235456^|^Rocky^|^Available^|^200
