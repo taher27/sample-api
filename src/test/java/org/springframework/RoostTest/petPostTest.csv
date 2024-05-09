@@ -1,0 +1,11 @@
+id^|^category^|^name^|^photoUrls^|^tags^|^status^|^statusCode
+1^|^{categoryObj1}^|^UserA^|^photoUrlsA1, photoUrlsA2^|^tag1, tag2^|^available^|^200
+2^|^{categoryObj2}^|^UserB^|^photoUrlsB1, photoUrlsB2^|^tag3, tag4^|^pending^|^300
+3^|^{categoryObj3}^|^UserC^|^photoUrlsC1, photoUrlsC2^|^tag5, tag6^|^sold^|^400
+4^|^{categoryObj4}^|^UserD^|^photoUrlsD1, photoUrlsD2^|^tag7, tag8^|^available^|^200
+5^|^{categoryObj5}^|^UserE^|^photoUrlsE1, photoUrlsE2^|^tag9, tag10^|^pending^|^300
+6^|^{categoryObj6}^|^UserF^|^photoUrlsF1, photoUrlsF2^|^tag11, tag12^|^sold^|^400
+7^|^{categoryObj7}^|^UserG^|^photoUrlsG1, photoUrlsG2^|^tag13, tag14^|^available^|^200
+8^|^{categoryObj8}^|^UserH^|^photoUrlsH1, photoUrlsH2^|^tag15, tag16^|^pending^|^300
+9^|^{categoryObj9}^|^UserI^|^photoUrlsI1, photoUrlsI2^|^tag17, tag18^|^sold^|^400
+10^|^{categoryObj10}^|^UserJ^|^photoUrlsJ1, photoUrlsJ2^|^tag19, tag20^|^available^|^200
