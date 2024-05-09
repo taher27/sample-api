@@ -1,0 +1,11 @@
+username^|^password^|^statusCode
+johnDoe^|^123456^|^200
+janeDoe^|^abcdef^|^200
+mark123^|^password^|^400
+lucy456^|^qwerty^|^200
+nick789^|^asdfgh^|^400
+emma001^|^zxcvbn^|^200
+jacob002^|^poiuyt^|^400
+olivia003^|^mnbvcx^|^200
+liam004^|^lkjhgf^|^400
+sophia005^|^fdsa^|^200

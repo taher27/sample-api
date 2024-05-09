@@ -1,0 +1,11 @@
+username^|^id^|^firstName^|^lastName^|^email^|^password^|^phone^|^userStatus^|^statusCode
+johnDoe^|^1^|^John^|^Doe^|^johnDoe@example.com^|^password123^|^1234567890^|^1^|^400
+janeDoe^|^2^|^Jane^|^Doe^|^janeDoe@example.com^|^password456^|^0987654321^|^0^|^404
+mikeSmith^|^3^|^Mike^|^Smith^|^mikeSmith@example.com^|^password789^|^1122334455^|^1^|^400
+sarahJohnson^|^4^|^Sarah^|^Johnson^|^sarahJohnson@example.com^|^password321^|^5566778899^|^0^|^404
+peterBrown^|^5^|^Peter^|^Brown^|^peterBrown@example.com^|^password654^|^2233445566^|^1^|^400
+lisaDavis^|^6^|^Lisa^|^Davis^|^lisaDavis@example.com^|^password987^|^3344556677^|^0^|^404
+robertMiller^|^7^|^Robert^|^Miller^|^robertMiller@example.com^|^password234^|^4455667788^|^1^|^400
+maryWilson^|^8^|^Mary^|^Wilson^|^maryWilson@example.com^|^password567^|^5566778899^|^0^|^404
+jamesMoore^|^9^|^James^|^Moore^|^jamesMoore@example.com^|^password890^|^6677889900^|^1^|^400
+lindaTaylor^|^10^|^Linda^|^Taylor^|^lindaTaylor@example.com^|^password012^|^7788990011^|^0^|^404
