@@ -1,0 +1,4 @@
+date,subscriberId,orderId,correlationOrder,associatedDocument,type,code,description,lostEquipment,gponAccess,category,deviceType,deviceDescription,state,usageState,startOperatingDate,characteristicName,characteristicValue,itemName,itemValue
+2020,"234567654","20230315000001","10","VTT001","Encerramento","0","Ordem encerrada com sucesso.","true","A000009QS","ONT","PhsysicalResource","Equipment - ONT device","completed","active",2022,"serialNumber",251990119989,"enderecoCDO","RUA GENERAL RENATO PAQUET, 199, BARRA DA TIJUCA, RIO DE JANEIRO - RJ 22793913"
+2021,"234567654","20230315000001","10","VTT001","Cancelamento","2","Ordem cancelada","null","null","null","null","null","null","null","null","null","null","null","null"
+2021,"234567654","20230315000001","10","VTT001","Encerramento","-1","O Equipamento já está em uso por outro cliente","true","null","null","null","null","null","null","null","null","null","null","null"
