@@ -1,0 +1,3 @@
+orderId,correlationOrder,associatedDocument,issueCode,issueDescription,issueType,observation,updateDate,action,task,fieldActivity,reason
+"20230315000001","10","VTT001","7029","Pendencia de agendamento","CLIENTE","",2021,"abrir","","true","PROJETO"
+"20230315000001","10","VTT001","7030","Pendencia de agendamento","TECNICA","",2022,"abrir","","false","MANUNTENÇÃO"
