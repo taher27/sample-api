@@ -1,0 +1,1877 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="res/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="res/karate-report.css" type="text/css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <script type="text/javascript" src="res/jquery.min.js"></script>
+    <script type="text/javascript" src="res/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="res/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="res/bootstrap.min.js"></script>
+    <script type="text/javascript" src="res/karate-report.js"></script>
+    <script type="text/javascript" src="res/Resemble.js"></script>
+    <script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
+  api_host:'https://app.posthog.com',
+  persistence:'localStorage',
+  autocapture:false,
+  capture_pageview:false,
+  api_transport:'sendBeacon',
+  loaded: function(posthog) { 
+    posthog.capture("report_feature",{distinct_id:"bff5a9b9-3a56-45df-b8ec-56cf5d6be8bf",karate_version:"1.5.1",karate_meta:null});
+  }
+});
+</script>
+
+    <title>employees_post</title>
+  </head>
+  <body>
+    <div id="root-container">
+      <div id="leftnav">
+        
+        <div>
+  <div class="nav-logo">
+    <a href="https://karatelabs.io">
+      <img src="karate-labs-logo-ring.svg" alt="Karate Labs"/>
+    </a>
+    <div class="nav-count">
+      <div id="nav-pass" class="bg-success">0</div>
+      <div id="nav-fail" class="bg-danger">5</div>
+    </div>
+  </div>
+  <div id="nav-env">
+    <div></div>
+  </div>
+  <div id="nav-type">
+    <div>Scenarios</div>
+  </div>
+  <div id="nav-date">
+    <div>2025-08-11 11:59:04 AM</div>
+  </div>
+</div>
+
+        <div class="nav-container">
+          <div class="nav-item failed">
+            <a href="#[1.1:38]"><span>[1.1:38]</span> <span>Adding a new employee with valid input</span></a>
+          </div>
+          <div class="nav-item failed">
+            <a href="#[1.2:38]"><span>[1.2:38]</span> <span>Adding a new employee with valid input</span></a>
+          </div>
+          <div class="nav-item failed">
+            <a href="#[2.1:58]"><span>[2.1:58]</span> <span>Invalid input when adding employee</span></a>
+          </div>
+          <div class="nav-item failed">
+            <a href="#[3.1:78]"><span>[3.1:78]</span> <span>Adding employee that already exists</span></a>
+          </div>
+          <div class="nav-item failed">
+            <a href="#[4:80]"><span>[4:80]</span> <span>Validating response headers for successful employee creation</span></a>
+          </div>
+        </div>
+      </div>
+      <div id="content">
+        <div class="page-heading alert alert-primary">
+          <a href="karate-summary.html">Summary</a><span class="feature-label">|</span>
+          <a href="karate-tags.html">Tags</a><span class="feature-label">|</span>
+          <span class="feature-label">Feature:</span>
+          <span class="feature-path">employees_post.feature</span><span class="feature-label">|</span>
+          <span class="feature-name">Employee API Tests</span>
+          <span class="feature-description"></span>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[1.1:38]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[1.1:38]</span>
+                <span class="scenario-name">Adding a new employee with valid input</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time failed">
+              <span>ms:</span>&nbsp;<span>1661</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[1.1:38]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[1.1:38]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.14">
+      <div class="step-ref bg-step">14</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def baseURL = karate.properties[&#39;EMPLOYEE_SERVICE_BASE_URL&#39;] || karate.properties[&#39;API_HOST&#39;]</span>
+      </div>
+    </div>
+    <div class="time-cell passed">3</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="1.14">11:58:59.179 set envVars for key: BASE_URL  with  https://virtserver.swaggerhub.com/061REB413/employee-service/0.1 
+11:58:59.184 set envVars for key: API_HOST  with  https://virtserver.swaggerhub.com/061REB413/employee-service/0.1 
+11:58:59.188 set envVars for key: EMPLOYEE_SERVICE_BASE_URL  with  https://virtserver.swaggerhub.com/061REB413/employee-service/0.1 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.1:38]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.15">
+      <div class="step-ref bg-step">15</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseURL</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.1:38]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.16">
+      <div class="step-ref bg-step">16</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def headers = { &#39;Accept&#39;: &#39;application/json&#39; }</span>
+      </div>
+    </div>
+    <div class="time-cell passed">12</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.1:38]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.17">
+      <div class="step-ref bg-step">17</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>configure headers = headers</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.20">
+      <div class="step-ref passed">20</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;employees&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.21">
+      <div class="step-ref passed">21</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="1.21">{
+  &quot;id&quot;: &quot;d290f1ee-6c54-4b01-90e6-d701748f0851&quot;,
+  &quot;jobTitle&quot;: &quot;System Analyst&quot;,
+  &quot;name&quot;: &quot;John Smith&quot;,
+  &quot;email&quot;: &quot;john.smith@acme-corp.com&quot;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.30">
+      <div class="step-ref passed">30</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method POST</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1628</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="1.30">11:58:59.533 request:
+1 &gt; POST https://virtserver.swaggerhub.com/061REB413/employee-service/0.1/employees
+1 &gt; Accept: application/json
+1 &gt; Content-Type: application/json; charset=UTF-8
+1 &gt; Content-Length: 128
+1 &gt; Host: virtserver.swaggerhub.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.8)
+1 &gt; Accept-Encoding: gzip,deflate
+{&quot;id&quot;:&quot;d290f1ee-6c54-4b01-90e6-d701748f0851&quot;,&quot;jobTitle&quot;:&quot;System Analyst&quot;,&quot;name&quot;:&quot;John Smith&quot;,&quot;email&quot;:&quot;john.smith@acme-corp.com&quot;}
+
+11:59:00.882 response time in milliseconds: 1102
+1 &lt; 201
+1 &lt; Date: Mon, 11 Aug 2025 11:59:00 GMT
+1 &lt; Content-Type: application/json;charset=utf-8
+1 &lt; Connection: keep-alive
+1 &lt; Access-Control-Allow-Headers: X-Requested-With,Content-Type,Accept,Origin
+1 &lt; Access-Control-Allow-Origin: *
+1 &lt; Access-Control-Allow-Methods: *
+1 &lt; Access-Control-Allow-Credentials: true
+1 &lt; Server: Jetty(11.0.14)
+
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.31">
+      <div class="step-ref passed">31</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 201</span>
+      </div>
+    </div>
+    <div class="time-cell passed">3</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.32">
+      <div class="step-ref failed">32</div>
+      
+      <div class="step-cell failed">
+        <span>And</span>&nbsp;<span>match response.id == &#39;#string&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell failed">13</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="1.32">11:59:00.903 employees_post.feature:32
+And match response.id == &#39;#string&#39;
+match failed: EQUALS
+  $ | not a string (NULL:STRING)
+  null
+  &#39;#string&#39;
+
+employees_post.feature:32
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.33">
+      <div class="step-ref skipped">33</div>
+      
+      <div class="step-cell skipped">
+        <span>And</span>&nbsp;<span>match response.jobTitle == &#39;#string&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell skipped">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.34">
+      <div class="step-ref skipped">34</div>
+      
+      <div class="step-cell skipped">
+        <span>And</span>&nbsp;<span>match response.name == &#39;#string&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell skipped">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.35">
+      <div class="step-ref skipped">35</div>
+      
+      <div class="step-cell skipped">
+        <span>And</span>&nbsp;<span>match response.email == &#39;#string&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell skipped">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[1.2:38]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[1.2:38]</span>
+                <span class="scenario-name">Adding a new employee with valid input</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time failed">
+              <span>ms:</span>&nbsp;<span>908</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[1.2:38]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[1.2:38]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.14">
+      <div class="step-ref bg-step">14</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def baseURL = karate.properties[&#39;EMPLOYEE_SERVICE_BASE_URL&#39;] || karate.properties[&#39;API_HOST&#39;]</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="2.14">11:59:00.916 set envVars for key: BASE_URL  with  https://virtserver.swaggerhub.com/061REB413/employee-service/0.1 
+11:59:00.919 set envVars for key: API_HOST  with  https://virtserver.swaggerhub.com/061REB413/employee-service/0.1 
+11:59:00.922 set envVars for key: EMPLOYEE_SERVICE_BASE_URL  with  https://virtserver.swaggerhub.com/061REB413/employee-service/0.1 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.2:38]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.15">
+      <div class="step-ref bg-step">15</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseURL</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.2:38]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.16">
+      <div class="step-ref bg-step">16</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def headers = { &#39;Accept&#39;: &#39;application/json&#39; }</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1.2:38]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.17">
+      <div class="step-ref bg-step">17</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>configure headers = headers</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.20">
+      <div class="step-ref passed">20</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;employees&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.21">
+      <div class="step-ref passed">21</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="2.21">{
+  &quot;id&quot;: &quot;e290f1ba-7c54-7b01-80e6-e701648f0952&quot;,
+  &quot;jobTitle&quot;: &quot;Software Engineer&quot;,
+  &quot;name&quot;: &quot;Alice Doe&quot;,
+  &quot;email&quot;: &quot;alice.doe@acme-corp.com&quot;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.30">
+      <div class="step-ref passed">30</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method POST</span>
+      </div>
+    </div>
+    <div class="time-cell passed">905</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="2.30">11:59:00.937 request:
+1 &gt; POST https://virtserver.swaggerhub.com/061REB413/employee-service/0.1/employees
+1 &gt; Accept: application/json
+1 &gt; Content-Type: application/json; charset=UTF-8
+1 &gt; Content-Length: 129
+1 &gt; Host: virtserver.swaggerhub.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.8)
+1 &gt; Accept-Encoding: gzip,deflate
+{&quot;id&quot;:&quot;e290f1ba-7c54-7b01-80e6-e701648f0952&quot;,&quot;jobTitle&quot;:&quot;Software Engineer&quot;,&quot;name&quot;:&quot;Alice Doe&quot;,&quot;email&quot;:&quot;alice.doe@acme-corp.com&quot;}
+
+11:59:01.837 response time in milliseconds: 684
+1 &lt; 201
+1 &lt; Date: Mon, 11 Aug 2025 11:59:01 GMT
+1 &lt; Content-Type: application/json;charset=utf-8
+1 &lt; Connection: keep-alive
+1 &lt; Access-Control-Allow-Headers: X-Requested-With,Content-Type,Accept,Origin
+1 &lt; Access-Control-Allow-Origin: *
+1 &lt; Access-Control-Allow-Methods: *
+1 &lt; Access-Control-Allow-Credentials: true
+1 &lt; Server: Jetty(11.0.14)
+
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.31">
+      <div class="step-ref passed">31</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 201</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.32">
+      <div class="step-ref failed">32</div>
+      
+      <div class="step-cell failed">
+        <span>And</span>&nbsp;<span>match response.id == &#39;#string&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell failed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="2.32">11:59:01.840 employees_post.feature:32
+And match response.id == &#39;#string&#39;
+match failed: EQUALS
+  $ | not a string (NULL:STRING)
+  null
+  &#39;#string&#39;
+
+employees_post.feature:32
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.33">
+      <div class="step-ref skipped">33</div>
+      
+      <div class="step-cell skipped">
+        <span>And</span>&nbsp;<span>match response.jobTitle == &#39;#string&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell skipped">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.34">
+      <div class="step-ref skipped">34</div>
+      
+      <div class="step-cell skipped">
+        <span>And</span>&nbsp;<span>match response.name == &#39;#string&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell skipped">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.35">
+      <div class="step-ref skipped">35</div>
+      
+      <div class="step-cell skipped">
+        <span>And</span>&nbsp;<span>match response.email == &#39;#string&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell skipped">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[2.1:58]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[2.1:58]</span>
+                <span class="scenario-name">Invalid input when adding employee</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time failed">
+              <span>ms:</span>&nbsp;<span>1007</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[2.1:58]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[2.1:58]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.14">
+      <div class="step-ref bg-step">14</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def baseURL = karate.properties[&#39;EMPLOYEE_SERVICE_BASE_URL&#39;] || karate.properties[&#39;API_HOST&#39;]</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="1.14">11:59:01.849 set envVars for key: BASE_URL  with  https://virtserver.swaggerhub.com/061REB413/employee-service/0.1 
+11:59:01.853 set envVars for key: API_HOST  with  https://virtserver.swaggerhub.com/061REB413/employee-service/0.1 
+11:59:01.858 set envVars for key: EMPLOYEE_SERVICE_BASE_URL  with  https://virtserver.swaggerhub.com/061REB413/employee-service/0.1 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.1:58]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.15">
+      <div class="step-ref bg-step">15</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseURL</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.1:58]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.16">
+      <div class="step-ref bg-step">16</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def headers = { &#39;Accept&#39;: &#39;application/json&#39; }</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2.1:58]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.17">
+      <div class="step-ref bg-step">17</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>configure headers = headers</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.41">
+      <div class="step-ref passed">41</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;employees&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.42">
+      <div class="step-ref passed">42</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="1.42">{
+  &quot;id&quot;: &quot;&#39;d290f1ee-6c54-4b01-90e6-d701748f0851&#39;&quot;,
+  &quot;jobTitle&quot;: &quot;&#39;System Analyst&#39;&quot;,
+  &quot;name&quot;: &quot;&quot;,
+  &quot;email&quot;: &quot;&#39;invalid_email&#39;&quot;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.51">
+      <div class="step-ref passed">51</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method POST</span>
+      </div>
+    </div>
+    <div class="time-cell passed">998</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="1.51">11:59:01.875 request:
+1 &gt; POST https://virtserver.swaggerhub.com/061REB413/employee-service/0.1/employees
+1 &gt; Accept: application/json
+1 &gt; Content-Type: application/json; charset=UTF-8
+1 &gt; Content-Length: 113
+1 &gt; Host: virtserver.swaggerhub.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.8)
+1 &gt; Accept-Encoding: gzip,deflate
+{&quot;id&quot;:&quot;&#39;d290f1ee-6c54-4b01-90e6-d701748f0851&#39;&quot;,&quot;jobTitle&quot;:&quot;&#39;System Analyst&#39;&quot;,&quot;name&quot;:&quot;&quot;,&quot;email&quot;:&quot;&#39;invalid_email&#39;&quot;}
+
+11:59:02.868 response time in milliseconds: 752
+1 &lt; 201
+1 &lt; Date: Mon, 11 Aug 2025 11:59:02 GMT
+1 &lt; Content-Type: application/json;charset=utf-8
+1 &lt; Connection: keep-alive
+1 &lt; Access-Control-Allow-Headers: X-Requested-With,Content-Type,Accept,Origin
+1 &lt; Access-Control-Allow-Origin: *
+1 &lt; Access-Control-Allow-Methods: *
+1 &lt; Access-Control-Allow-Credentials: true
+1 &lt; Server: Jetty(11.0.14)
+
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.52">
+      <div class="step-ref failed">52</div>
+      
+      <div class="step-cell failed">
+        <span>Then</span>&nbsp;<span>status 400</span>
+      </div>
+    </div>
+    <div class="time-cell failed">8</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="1.52">11:59:02.877 employees_post.feature:52
+Then status 400
+status code was: 201, expected: 400, response time in milliseconds: 752, url: https://virtserver.swaggerhub.com/061REB413/employee-service/0.1/employees, response: 
+
+employees_post.feature:52
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.53">
+      <div class="step-ref skipped">53</div>
+      
+      <div class="step-cell skipped">
+        <span>And</span>&nbsp;<span>match response.error.message == &#39;#string&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell skipped">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.54">
+      <div class="step-ref skipped">54</div>
+      
+      <div class="step-cell skipped">
+        <span>And</span>&nbsp;<span>match response.error.code == &#39;#string&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell skipped">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[3.1:78]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[3.1:78]</span>
+                <span class="scenario-name">Adding employee that already exists</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time failed">
+              <span>ms:</span>&nbsp;<span>1014</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[3.1:78]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[3.1:78]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.14">
+      <div class="step-ref bg-step">14</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def baseURL = karate.properties[&#39;EMPLOYEE_SERVICE_BASE_URL&#39;] || karate.properties[&#39;API_HOST&#39;]</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="1.14">11:59:02.882 set envVars for key: BASE_URL  with  https://virtserver.swaggerhub.com/061REB413/employee-service/0.1 
+11:59:02.884 set envVars for key: API_HOST  with  https://virtserver.swaggerhub.com/061REB413/employee-service/0.1 
+11:59:02.886 set envVars for key: EMPLOYEE_SERVICE_BASE_URL  with  https://virtserver.swaggerhub.com/061REB413/employee-service/0.1 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[3.1:78]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.15">
+      <div class="step-ref bg-step">15</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseURL</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[3.1:78]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.16">
+      <div class="step-ref bg-step">16</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def headers = { &#39;Accept&#39;: &#39;application/json&#39; }</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[3.1:78]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.17">
+      <div class="step-ref bg-step">17</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>configure headers = headers</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.61">
+      <div class="step-ref passed">61</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;employees&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.62">
+      <div class="step-ref passed">62</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="1.62">{
+  &quot;id&quot;: &quot;&#39;d290f1ee-6c54-4b01-90e6-d701748f0851&#39;&quot;,
+  &quot;jobTitle&quot;: &quot;&#39;System Analyst&#39;&quot;,
+  &quot;name&quot;: &quot;&#39;John Smith&#39;&quot;,
+  &quot;email&quot;: &quot;&#39;john.smith@acme-corp.com&#39;&quot;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.71">
+      <div class="step-ref passed">71</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method POST</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1013</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="1.71">11:59:02.895 request:
+1 &gt; POST https://virtserver.swaggerhub.com/061REB413/employee-service/0.1/employees
+1 &gt; Accept: application/json
+1 &gt; Content-Type: application/json; charset=UTF-8
+1 &gt; Content-Length: 136
+1 &gt; Host: virtserver.swaggerhub.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.8)
+1 &gt; Accept-Encoding: gzip,deflate
+{&quot;id&quot;:&quot;&#39;d290f1ee-6c54-4b01-90e6-d701748f0851&#39;&quot;,&quot;jobTitle&quot;:&quot;&#39;System Analyst&#39;&quot;,&quot;name&quot;:&quot;&#39;John Smith&#39;&quot;,&quot;email&quot;:&quot;&#39;john.smith@acme-corp.com&#39;&quot;}
+
+11:59:03.904 response time in milliseconds: 764
+1 &lt; 201
+1 &lt; Date: Mon, 11 Aug 2025 11:59:03 GMT
+1 &lt; Content-Type: application/json;charset=utf-8
+1 &lt; Connection: keep-alive
+1 &lt; Access-Control-Allow-Headers: X-Requested-With,Content-Type,Accept,Origin
+1 &lt; Access-Control-Allow-Origin: *
+1 &lt; Access-Control-Allow-Methods: *
+1 &lt; Access-Control-Allow-Credentials: true
+1 &lt; Server: Jetty(11.0.14)
+
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.72">
+      <div class="step-ref failed">72</div>
+      
+      <div class="step-cell failed">
+        <span>Then</span>&nbsp;<span>status 409</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="1.72">11:59:03.906 employees_post.feature:72
+Then status 409
+status code was: 201, expected: 409, response time in milliseconds: 764, url: https://virtserver.swaggerhub.com/061REB413/employee-service/0.1/employees, response: 
+
+employees_post.feature:72
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.73">
+      <div class="step-ref skipped">73</div>
+      
+      <div class="step-cell skipped">
+        <span>And</span>&nbsp;<span>match response.error.message == &#39;#string&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell skipped">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.74">
+      <div class="step-ref skipped">74</div>
+      
+      <div class="step-cell skipped">
+        <span>And</span>&nbsp;<span>match response.error.code == &#39;#string&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell skipped">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[4:80]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[4:80]</span>
+                <span class="scenario-name">Validating response headers for successful employee creation</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time failed">
+              <span>ms:</span>&nbsp;<span>1024</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[4:80]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[4:80]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.14">
+      <div class="step-ref bg-step">14</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def baseURL = karate.properties[&#39;EMPLOYEE_SERVICE_BASE_URL&#39;] || karate.properties[&#39;API_HOST&#39;]</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.14">11:59:03.911 set envVars for key: BASE_URL  with  https://virtserver.swaggerhub.com/061REB413/employee-service/0.1 
+11:59:03.912 set envVars for key: API_HOST  with  https://virtserver.swaggerhub.com/061REB413/employee-service/0.1 
+11:59:03.914 set envVars for key: EMPLOYEE_SERVICE_BASE_URL  with  https://virtserver.swaggerhub.com/061REB413/employee-service/0.1 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[4:80]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.15">
+      <div class="step-ref bg-step">15</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseURL</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[4:80]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.16">
+      <div class="step-ref bg-step">16</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def headers = { &#39;Accept&#39;: &#39;application/json&#39; }</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[4:80]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.17">
+      <div class="step-ref bg-step">17</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>configure headers = headers</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.81">
+      <div class="step-ref passed">81</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;employees&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.82">
+      <div class="step-ref passed">82</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="0.82">{
+  &quot;id&quot;: &quot;d290f1ee-6c54-4b01-90e6-d701748f0851&quot;,
+  &quot;jobTitle&quot;: &quot;System Analyst&quot;,
+  &quot;name&quot;: &quot;John Smith&quot;,
+  &quot;email&quot;: &quot;john.smith@acme-corp.com&quot;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.91">
+      <div class="step-ref passed">91</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method POST</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1020</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.91">11:59:03.922 request:
+1 &gt; POST https://virtserver.swaggerhub.com/061REB413/employee-service/0.1/employees
+1 &gt; Accept: application/json
+1 &gt; Content-Type: application/json; charset=UTF-8
+1 &gt; Content-Length: 128
+1 &gt; Host: virtserver.swaggerhub.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.8)
+1 &gt; Accept-Encoding: gzip,deflate
+{&quot;id&quot;:&quot;d290f1ee-6c54-4b01-90e6-d701748f0851&quot;,&quot;jobTitle&quot;:&quot;System Analyst&quot;,&quot;name&quot;:&quot;John Smith&quot;,&quot;email&quot;:&quot;john.smith@acme-corp.com&quot;}
+
+11:59:04.940 response time in milliseconds: 770
+1 &lt; 201
+1 &lt; Date: Mon, 11 Aug 2025 11:59:04 GMT
+1 &lt; Content-Type: application/json;charset=utf-8
+1 &lt; Connection: keep-alive
+1 &lt; Access-Control-Allow-Headers: X-Requested-With,Content-Type,Accept,Origin
+1 &lt; Access-Control-Allow-Origin: *
+1 &lt; Access-Control-Allow-Methods: *
+1 &lt; Access-Control-Allow-Credentials: true
+1 &lt; Server: Jetty(11.0.14)
+
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.92">
+      <div class="step-ref passed">92</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 201</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.93">
+      <div class="step-ref failed">93</div>
+      
+      <div class="step-cell failed">
+        <span>And</span>&nbsp;<span>match responseHeaders[&#39;Content-Type&#39;][0] == &#39;#application/json&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell failed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.93">11:59:04.943 employees_post.feature:93
+And match responseHeaders[&#39;Content-Type&#39;][0] == &#39;#application/json&#39;
+match failed: EQUALS
+
+employees_post.feature:93
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
