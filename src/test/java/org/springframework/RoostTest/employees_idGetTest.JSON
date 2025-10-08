@@ -1,0 +1,59 @@
+[
+  {
+    "name": "Test Case 1",
+    "description": "Verify that the user can log in with valid credentials.",
+    "steps": [
+      {
+        "action": "Enter username",
+        "expected": "Username field should accept input."
+      },
+      {
+        "action": "Enter password",
+        "expected": "Password field should accept input."
+      },
+      {
+        "action": "Click login button",
+        "expected": "User should be redirected to the dashboard."
+      }
+    ],
+    "expectedResult": "User successfully logs in and is redirected to the dashboard."
+  },
+  {
+    "name": "Test Case 2",
+    "description": "Verify that the user cannot log in with invalid credentials.",
+    "steps": [
+      {
+        "action": "Enter invalid username",
+        "expected": "Username field should accept input."
+      },
+      {
+        "action": "Enter invalid password",
+        "expected": "Password field should accept input."
+      },
+      {
+        "action": "Click login button",
+        "expected": "Error message should be displayed."
+      }
+    ],
+    "expectedResult": "User cannot log in and an error message is displayed."
+  },
+  {
+    "name": "Test Case 3",
+    "description": "Verify that the user can reset their password.",
+    "steps": [
+      {
+        "action": "Click 'Forgot Password' link",
+        "expected": "User should be redirected to the password reset page."
+      },
+      {
+        "action": "Enter email address",
+        "expected": "Email field should accept input."
+      },
+      {
+        "action": "Click 'Reset Password' button",
+        "expected": "Confirmation message should be displayed."
+      }
+    ],
+    "expectedResult": "User receives a password reset confirmation message."
+  }
+]
