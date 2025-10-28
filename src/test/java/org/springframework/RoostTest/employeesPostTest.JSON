@@ -1,0 +1,343 @@
+[
+  {
+    "description": "Test creating an employee with valid employee data",
+    "request_header": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {
+      "id": "550e8400-e29b-41d4-a716-446655440000",
+      "jobTitle": "Software Engineer",
+      "name": "John Doe",
+      "email": "john.doe@example.com"
+    },
+    "query_params": {},
+    "path_params": {},
+    "response_header": {
+      "Content-Type": "application/json"
+    },
+    "response_body": {
+      "message": "employee created"
+    },
+    "expected_status_code": 201
+  },
+  {
+    "description": "Test creating employee with missing required name field",
+    "request_header": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {
+      "id": "550e8400-e29b-41d4-a716-446655440001",
+      "jobTitle": "Software Engineer",
+      "email": "jane.doe@example.com"
+    },
+    "query_params": {},
+    "path_params": {},
+    "response_header": {
+      "Content-Type": "application/json"
+    },
+    "response_body": {
+      "error": "invalid input, object invalid",
+      "message": "Missing required field: name"
+    },
+    "expected_status_code": 400
+  },
+  {
+    "description": "Test creating employee with missing required email field",
+    "request_header": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {
+      "id": "550e8400-e29b-41d4-a716-446655440002",
+      "jobTitle": "Software Engineer",
+      "name": "Bob Smith"
+    },
+    "query_params": {},
+    "path_params": {},
+    "response_header": {
+      "Content-Type": "application/json"
+    },
+    "response_body": {
+      "error": "invalid input, object invalid",
+      "message": "Missing required field: email"
+    },
+    "expected_status_code": 400
+  },
+  {
+    "description": "Test creating employee with missing required jobTitle field",
+    "request_header": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {
+      "id": "550e8400-e29b-41d4-a716-446655440003",
+      "name": "Alice Johnson",
+      "email": "alice.johnson@example.com"
+    },
+    "query_params": {},
+    "path_params": {},
+    "response_header": {
+      "Content-Type": "application/json"
+    },
+    "response_body": {
+      "error": "invalid input, object invalid",
+      "message": "Missing required field: jobTitle"
+    },
+    "expected_status_code": 400
+  },
+  {
+    "description": "Test creating employee with empty request body",
+    "request_header": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {},
+    "query_params": {},
+    "path_params": {},
+    "response_header": {
+      "Content-Type": "application/json"
+    },
+    "response_body": {
+      "error": "invalid input, object invalid",
+      "message": "Request body cannot be empty"
+    },
+    "expected_status_code": 400
+  },
+  {
+    "description": "Test creating employee with null values in required fields",
+    "request_header": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {
+      "id": "550e8400-e29b-41d4-a716-446655440004",
+      "jobTitle": null,
+      "name": null,
+      "email": null
+    },
+    "query_params": {},
+    "path_params": {},
+    "response_header": {
+      "Content-Type": "application/json"
+    },
+    "response_body": {
+      "error": "invalid input, object invalid",
+      "message": "Required fields cannot be null"
+    },
+    "expected_status_code": 400
+  },
+  {
+    "description": "Test creating employee with empty string values in required fields",
+    "request_header": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {
+      "id": "550e8400-e29b-41d4-a716-446655440005",
+      "jobTitle": "",
+      "name": "",
+      "email": ""
+    },
+    "query_params": {},
+    "path_params": {},
+    "response_header": {
+      "Content-Type": "application/json"
+    },
+    "response_body": {
+      "error": "invalid input, object invalid",
+      "message": "Required fields cannot be empty"
+    },
+    "expected_status_code": 400
+  },
+  {
+    "description": "Test creating employee with invalid email format",
+    "request_header": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {
+      "id": "550e8400-e29b-41d4-a716-446655440006",
+      "jobTitle": "Data Analyst",
+      "name": "Charlie Brown",
+      "email": "invalid-email"
+    },
+    "query_params": {},
+    "path_params": {},
+    "response_header": {
+      "Content-Type": "application/json"
+    },
+    "response_body": {
+      "error": "invalid input, object invalid",
+      "message": "Invalid email format"
+    },
+    "expected_status_code": 400
+  },
+  {
+    "description": "Test creating employee with invalid UUID format for id",
+    "request_header": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {
+      "id": "invalid-uuid-format",
+      "jobTitle": "Project Manager",
+      "name": "Diana Prince",
+      "email": "diana.prince@example.com"
+    },
+    "query_params": {},
+    "path_params": {},
+    "response_header": {
+      "Content-Type": "application/json"
+    },
+    "response_body": {
+      "error": "invalid input, object invalid",
+      "message": "Invalid UUID format for id field"
+    },
+    "expected_status_code": 400
+  },
+  {
+    "description": "Test creating employee with invalid data types",
+    "request_header": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {
+      "id": 12345,
+      "jobTitle": 678,
+      "name": 999,
+      "email": true
+    },
+    "query_params": {},
+    "path_params": {},
+    "response_header": {
+      "Content-Type": "application/json"
+    },
+    "response_body": {
+      "error": "invalid input, object invalid",
+      "message": "Invalid data types for fields"
+    },
+    "expected_status_code": 400
+  },
+  {
+    "description": "Test creating employee that already exists (duplicate email)",
+    "request_header": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {
+      "id": "550e8400-e29b-41d4-a716-446655440007",
+      "jobTitle": "Senior Developer",
+      "name": "Existing User",
+      "email": "existing.user@example.com"
+    },
+    "query_params": {},
+    "path_params": {},
+    "response_header": {
+      "Content-Type": "application/json"
+    },
+    "response_body": {
+      "error": "an existing employee already exists",
+      "message": "Employee with this email already exists"
+    },
+    "expected_status_code": 409
+  },
+  {
+    "description": "Test creating employee with excessively long field values",
+    "request_header": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {
+      "id": "550e8400-e29b-41d4-a716-446655440008",
+      "jobTitle": "A".repeat(1000),
+      "name": "B".repeat(1000),
+      "email": "very.long.email.address.that.exceeds.normal.limits@exampledomainwithverylongname.com"
+    },
+    "query_params": {},
+    "path_params": {},
+    "response_header": {
+      "Content-Type": "application/json"
+    },
+    "response_body": {
+      "error": "invalid input, object invalid",
+      "message": "Field values exceed maximum length"
+    },
+    "expected_status_code": 400
+  },
+  {
+    "description": "Test creating employee with special characters in name field",
+    "request_header": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {
+      "id": "550e8400-e29b-41d4-a716-446655440009",
+      "jobTitle": "QA Engineer",
+      "name": "<script>alert('test')</script>",
+      "email": "test.user@example.com"
+    },
+    "query_params": {},
+    "path_params": {},
+    "response_header": {
+      "Content-Type": "application/json"
+    },
+    "response_body": {
+      "error": "invalid input, object invalid",
+      "message": "Invalid characters in name field"
+    },
+    "expected_status_code": 400
+  },
+  {
+    "description": "Test creating employee without Content-Type header",
+    "request_header": {},
+    "request_body": {
+      "id": "550e8400-e29b-41d4-a716-446655440010",
+      "jobTitle": "DevOps Engineer",
+      "name": "Frank Miller",
+      "email": "frank.miller@example.com"
+    },
+    "query_params": {},
+    "path_params": {},
+    "response_header": {
+      "Content-Type": "application/json"
+    },
+    "response_body": {
+      "error": "invalid input, object invalid",
+      "message": "Content-Type header is required"
+    },
+    "expected_status_code": 400
+  },
+  {
+    "description": "Test creating employee with incorrect Content-Type header",
+    "request_header": {
+      "Content-Type": "text/plain"
+    },
+    "request_body": {
+      "id": "550e8400-e29b-41d4-a716-446655440011",
+      "jobTitle": "Systems Analyst",
+      "name": "Grace Hopper",
+      "email": "grace.hopper@example.com"
+    },
+    "query_params": {},
+    "path_params": {},
+    "response_header": {
+      "Content-Type": "application/json"
+    },
+    "response_body": {
+      "error": "invalid input, object invalid",
+      "message": "Unsupported Content-Type"
+    },
+    "expected_status_code": 400
+  },
+  {
+    "description": "Test creating employee with numeric values as strings in name field",
+    "request_header": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {
+      "id": "550e8400-e29b-41d4-a716-446655440012",
+      "jobTitle": "Business Analyst",
+      "name": "12345",
+      "email": "numeric.name@example.com"
+    },
+    "query_params": {},
+    "path_params": {},
+    "response_header": {
+      "Content-Type": "application/json"
+    },
+    "response_body": {
+      "error": "invalid input, object invalid",
+      "message": "Name field cannot contain only numeric values"
+    },
+    "expected_status_code": 400
+  }
+]

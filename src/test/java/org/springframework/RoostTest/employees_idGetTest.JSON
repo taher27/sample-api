@@ -1,0 +1,293 @@
+[
+  {
+    "description": "Test retrieving an employee with a valid UUID",
+    "request_header": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {},
+    "query_params": {},
+    "path_params": {
+      "id": "d290f1ee-6c54-4b01-90e6-d701748f0851"
+    },
+    "response_header": {
+      "Content-Type": "application/json"
+    },
+    "response_body": {
+      "id": "d290f1ee-6c54-4b01-90e6-d701748f0851",
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "jobTitle": "Software Engineer"
+    },
+    "expected_status_code": 200
+  },
+  {
+    "description": "Test retrieving an employee with valid UUID format but non-existent ID",
+    "request_header": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {},
+    "query_params": {},
+    "path_params": {
+      "id": "12345678-1234-1234-1234-123456789012"
+    },
+    "response_header": {
+      "Content-Type": "application/json"
+    },
+    "response_body": {
+      "error": "Not found",
+      "message": "Employee not found"
+    },
+    "expected_status_code": 404
+  },
+  {
+    "description": "Test with invalid UUID format in path parameter",
+    "request_header": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {},
+    "query_params": {},
+    "path_params": {
+      "id": "invalid-uuid-format"
+    },
+    "response_header": {
+      "Content-Type": "application/json"
+    },
+    "response_body": {
+      "error": "Bad Request",
+      "message": "Invalid UUID format"
+    },
+    "expected_status_code": 400
+  },
+  {
+    "description": "Test with empty string as employee ID",
+    "request_header": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {},
+    "query_params": {},
+    "path_params": {
+      "id": ""
+    },
+    "response_header": {
+      "Content-Type": "application/json"
+    },
+    "response_body": {
+      "error": "Not found",
+      "message": "Resource not found"
+    },
+    "expected_status_code": 404
+  },
+  {
+    "description": "Test with numeric value instead of UUID format",
+    "request_header": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {},
+    "query_params": {},
+    "path_params": {
+      "id": "12345"
+    },
+    "response_header": {
+      "Content-Type": "application/json"
+    },
+    "response_body": {
+      "error": "Bad Request",
+      "message": "Invalid UUID format"
+    },
+    "expected_status_code": 400
+  },
+  {
+    "description": "Test with special characters in employee ID parameter",
+    "request_header": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {},
+    "query_params": {},
+    "path_params": {
+      "id": "emp@#$%^&*()"
+    },
+    "response_header": {
+      "Content-Type": "application/json"
+    },
+    "response_body": {
+      "error": "Bad Request",
+      "message": "Invalid UUID format"
+    },
+    "expected_status_code": 400
+  },
+  {
+    "description": "Test with extremely long string as employee ID",
+    "request_header": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {},
+    "query_params": {},
+    "path_params": {
+      "id": "a".repeat(1000)
+    },
+    "response_header": {
+      "Content-Type": "application/json"
+    },
+    "response_body": {
+      "error": "Bad Request",
+      "message": "Request URI too long"
+    },
+    "expected_status_code": 414
+  },
+  {
+    "description": "Test with SQL injection attempt in employee ID parameter",
+    "request_header": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {},
+    "query_params": {},
+    "path_params": {
+      "id": "'; DROP TABLE employees; --"
+    },
+    "response_header": {
+      "Content-Type": "application/json"
+    },
+    "response_body": {
+      "error": "Bad Request",
+      "message": "Invalid UUID format"
+    },
+    "expected_status_code": 400
+  },
+  {
+    "description": "Test with UUID containing uppercase letters",
+    "request_header": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {},
+    "query_params": {},
+    "path_params": {
+      "id": "D290F1EE-6C54-4B01-90E6-D701748F0851"
+    },
+    "response_header": {
+      "Content-Type": "application/json"
+    },
+    "response_body": {
+      "id": "D290F1EE-6C54-4B01-90E6-D701748F0851",
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "jobTitle": "Product Manager"
+    },
+    "expected_status_code": 200
+  },
+  {
+    "description": "Test with UUID missing hyphens",
+    "request_header": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {},
+    "query_params": {},
+    "path_params": {
+      "id": "d290f1ee6c544b0190e6d701748f0851"
+    },
+    "response_header": {
+      "Content-Type": "application/json"
+    },
+    "response_body": {
+      "error": "Bad Request",
+      "message": "Invalid UUID format"
+    },
+    "expected_status_code": 400
+  },
+  {
+    "description": "Test with UUID containing invalid characters",
+    "request_header": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {},
+    "query_params": {},
+    "path_params": {
+      "id": "d290f1ee-6c54-4b01-90e6-d701748f085g"
+    },
+    "response_header": {
+      "Content-Type": "application/json"
+    },
+    "response_body": {
+      "error": "Bad Request",
+      "message": "Invalid UUID format"
+    },
+    "expected_status_code": 400
+  },
+  {
+    "description": "Test with UUID having incorrect segment lengths",
+    "request_header": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {},
+    "query_params": {},
+    "path_params": {
+      "id": "d290f1ee-6c54-4b01-90e6-d701748f08"
+    },
+    "response_header": {
+      "Content-Type": "application/json"
+    },
+    "response_body": {
+      "error": "Bad Request",
+      "message": "Invalid UUID format"
+    },
+    "expected_status_code": 400
+  },
+  {
+    "description": "Test with null UUID (represented as string 'null')",
+    "request_header": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {},
+    "query_params": {},
+    "path_params": {
+      "id": "null"
+    },
+    "response_header": {
+      "Content-Type": "application/json"
+    },
+    "response_body": {
+      "error": "Bad Request",
+      "message": "Invalid UUID format"
+    },
+    "expected_status_code": 400
+  },
+  {
+    "description": "Test with URL-encoded UUID attempt",
+    "request_header": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {},
+    "query_params": {},
+    "path_params": {
+      "id": "d290f1ee%2D6c54%2D4b01%2D90e6%2Dd701748f0851"
+    },
+    "response_header": {
+      "Content-Type": "application/json"
+    },
+    "response_body": {
+      "error": "Bad Request",
+      "message": "Invalid UUID format"
+    },
+    "expected_status_code": 400
+  },
+  {
+    "description": "Test response contains all required fields with correct data types",
+    "request_header": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {},
+    "query_params": {},
+    "path_params": {
+      "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+    },
+    "response_header": {
+      "Content-Type": "application/json"
+    },
+    "response_body": {
+      "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+      "name": "Alice Johnson",
+      "email": "alice.johnson@example.com",
+      "jobTitle": "Senior Developer"
+    },
+    "expected_status_code": 200
+  }
+]
