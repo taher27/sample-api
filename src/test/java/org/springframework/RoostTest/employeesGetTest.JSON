@@ -1,0 +1,311 @@
+[
+  {
+    "description": "Test valid request without searchString parameter returns 200",
+    "request_header": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {},
+    "query_params": {},
+    "path_params": {},
+    "response_header": {
+      "Content-Type": "application/json"
+    },
+    "response_body": [
+      {
+        "id": "550e8400-e29b-41d4-a716-446655440000",
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "jobTitle": "Software Engineer"
+      }
+    ],
+    "expected_status_code": 200
+  },
+  {
+    "description": "Test valid request with searchString parameter returns 200",
+    "request_header": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {},
+    "query_params": {
+      "searchString": "John"
+    },
+    "path_params": {},
+    "response_header": {
+      "Content-Type": "application/json"
+    },
+    "response_body": [
+      {
+        "id": "550e8400-e29b-41d4-a716-446655440000",
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "jobTitle": "Software Engineer"
+      }
+    ],
+    "expected_status_code": 200
+  },
+  {
+    "description": "Test empty searchString parameter returns 200",
+    "request_header": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {},
+    "query_params": {
+      "searchString": ""
+    },
+    "path_params": {},
+    "response_header": {
+      "Content-Type": "application/json"
+    },
+    "response_body": [
+      {
+        "id": "550e8400-e29b-41d4-a716-446655440000",
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "jobTitle": "Software Engineer"
+      }
+    ],
+    "expected_status_code": 200
+  },
+  {
+    "description": "Test whitespace-only searchString parameter returns 200",
+    "request_header": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {},
+    "query_params": {
+      "searchString": "   "
+    },
+    "path_params": {},
+    "response_header": {
+      "Content-Type": "application/json"
+    },
+    "response_body": [
+      {
+        "id": "550e8400-e29b-41d4-a716-446655440000",
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "jobTitle": "Software Engineer"
+      }
+    ],
+    "expected_status_code": 200
+  },
+  {
+    "description": "Test extremely long searchString parameter returns 400",
+    "request_header": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {},
+    "query_params": {
+      "searchString": "a".repeat(10000)
+    },
+    "path_params": {},
+    "response_header": {
+      "Content-Type": "application/json"
+    },
+    "response_body": {
+      "error": "Bad input",
+      "message": "Search string exceeds maximum length"
+    },
+    "expected_status_code": 400
+  },
+  {
+    "description": "Test special characters in searchString parameter returns 200",
+    "request_header": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {},
+    "query_params": {
+      "searchString": "!@#$%^&*()"
+    },
+    "path_params": {},
+    "response_header": {
+      "Content-Type": "application/json"
+    },
+    "response_body": [],
+    "expected_status_code": 200
+  },
+  {
+    "description": "Test Unicode characters in searchString parameter returns 200",
+    "request_header": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {},
+    "query_params": {
+      "searchString": "José"
+    },
+    "path_params": {},
+    "response_header": {
+      "Content-Type": "application/json"
+    },
+    "response_body": [
+      {
+        "id": "550e8400-e29b-41d4-a716-446655440001",
+        "name": "José García",
+        "email": "jose.garcia@example.com",
+        "jobTitle": "Designer"
+      }
+    ],
+    "expected_status_code": 200
+  },
+  {
+    "description": "Test SQL injection attempt in searchString parameter returns 400",
+    "request_header": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {},
+    "query_params": {
+      "searchString": "'; DROP TABLE employees; --"
+    },
+    "path_params": {},
+    "response_header": {
+      "Content-Type": "application/json"
+    },
+    "response_body": {
+      "error": "Bad input",
+      "message": "Invalid search string format"
+    },
+    "expected_status_code": 400
+  },
+  {
+    "description": "Test script injection attempt in searchString parameter returns 400",
+    "request_header": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {},
+    "query_params": {
+      "searchString": "<script>alert('xss')</script>"
+    },
+    "path_params": {},
+    "response_header": {
+      "Content-Type": "application/json"
+    },
+    "response_body": {
+      "error": "Bad input",
+      "message": "Invalid search string format"
+    },
+    "expected_status_code": 400
+  },
+  {
+    "description": "Test invalid query parameter name returns 400",
+    "request_header": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {},
+    "query_params": {
+      "invalidParam": "test"
+    },
+    "path_params": {},
+    "response_header": {
+      "Content-Type": "application/json"
+    },
+    "response_body": {
+      "error": "Bad input",
+      "message": "Invalid query parameter"
+    },
+    "expected_status_code": 400
+  },
+  {
+    "description": "Test case sensitive search string with uppercase returns 200",
+    "request_header": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {},
+    "query_params": {
+      "searchString": "JOHN"
+    },
+    "path_params": {},
+    "response_header": {
+      "Content-Type": "application/json"
+    },
+    "response_body": [
+      {
+        "id": "550e8400-e29b-41d4-a716-446655440000",
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "jobTitle": "Software Engineer"
+      }
+    ],
+    "expected_status_code": 200
+  },
+  {
+    "description": "Test case sensitive search string with lowercase returns 200",
+    "request_header": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {},
+    "query_params": {
+      "searchString": "john"
+    },
+    "path_params": {},
+    "response_header": {
+      "Content-Type": "application/json"
+    },
+    "response_body": [
+      {
+        "id": "550e8400-e29b-41d4-a716-446655440000",
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "jobTitle": "Software Engineer"
+      }
+    ],
+    "expected_status_code": 200
+  },
+  {
+    "description": "Test numeric searchString parameter returns 200",
+    "request_header": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {},
+    "query_params": {
+      "searchString": "123"
+    },
+    "path_params": {},
+    "response_header": {
+      "Content-Type": "application/json"
+    },
+    "response_body": [],
+    "expected_status_code": 200
+  },
+  {
+    "description": "Test null value in searchString parameter returns 400",
+    "request_header": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {},
+    "query_params": {
+      "searchString": null
+    },
+    "path_params": {},
+    "response_header": {
+      "Content-Type": "application/json"
+    },
+    "response_body": {
+      "error": "Bad input",
+      "message": "Invalid parameter value"
+    },
+    "expected_status_code": 400
+  },
+  {
+    "description": "Test URL encoded searchString parameter returns 200",
+    "request_header": {
+      "Content-Type": "application/json"
+    },
+    "request_body": {},
+    "query_params": {
+      "searchString": "John%20Doe"
+    },
+    "path_params": {},
+    "response_header": {
+      "Content-Type": "application/json"
+    },
+    "response_body": [
+      {
+        "id": "550e8400-e29b-41d4-a716-446655440000",
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "jobTitle": "Software Engineer"
+      }
+    ],
+    "expected_status_code": 200
+  }
+]
