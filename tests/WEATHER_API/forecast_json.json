@@ -1,0 +1,52 @@
+[
+  {
+    "q": "New York",
+    "days": 7,
+    "statusCode": 200,
+    "scenario": "Successful responses: OK"
+  },
+  {
+    "q": "Los Angeles",
+    "days": 5,
+    "lang": "en",
+    "alerts": "yes",
+    "aqi": "yes",
+    "statusCode": 200,
+    "scenario": "Successful responses: OK"
+  },
+  {
+    "days": 3,
+    "statusCode": 400,
+    "scenario": "Client error responses: Bad Request"
+  },
+  {
+    "q": "InvalidCityName",
+    "days": 4,
+    "statusCode": 400,
+    "scenario": "Client error responses: Bad Request"
+  },
+  {
+    "q": "NonExistentPlace",
+    "days": 2,
+    "statusCode": 400,
+    "scenario": "Client error responses: Bad Request"
+  },
+  {
+    "q": "Paris",
+    "days": 15,
+    "statusCode": 400,
+    "scenario": "Client error responses: Bad Request"
+  },
+  {
+    "q": "London",
+    "days": 8,
+    "statusCode": 401,
+    "scenario": "Client error responses: Unauthorized"
+  },
+  {
+    "q": "Tokyo",
+    "days": 10,
+    "statusCode": 403,
+    "scenario": "Client error responses: Forbidden"
+  }
+]
